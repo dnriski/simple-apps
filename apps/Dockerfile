@@ -1,17 +1,20 @@
-#Menentukan Images
+# MENENTUKAN IMAGES
 FROM node:18.16
 
-#Perintah Yang Dijalankan
-RUN apt update -y && npm install
+# WORKDIR
+WORKDIR /app
 
-#Copy file to image
+# COPY FILE TO IMAGE
 ADD . /app
 
-#MAINTANER IMAGE 
-LABEL email="nugrohoriski@gmail.com"
+# PERINTAH YANG DIJALANKAN PADA SAAT PEMBUATAN IMAGE
+RUN apt update -y  && npm install
 
-#Perintah yg dijalankan pada saat container sudah up
+#MAINTANER IMAGE 
+LABEL email="nugrohoriski157@gmail.com"
+
+# PERINTAH YANG DIJALANKAN SAAT CONTAINER SUDAH UP
 CMD ["npm", "start"]
 
-#Describe expose port
+# DESCRIVE EKSPOSE PORT
 EXPOSE 3000
